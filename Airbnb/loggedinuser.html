@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Airbnb</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap"/>
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+    </head>
+    <body>
+        <!-- TOP-NAV-HTML -->
+        <div class="top-nav clearfix">
+            <a href="index.html" class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="Airbnb-logo" />
+        </a>
+        <div id="nav-search-wrapper">
+            <form method="POST" action="index.html">
+                <input type="text" name="search" id="nav-search" placeholder="Search"/>
+            </form>
+        </div>
+        <ul>
+            <li><a href="becomehost.html">Become a Host</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+        </div>
+        <!--MOTTO-->
+        <div id="motto-wrapper">
+            <div style="position:relative; left: 180px; top: 60px;">
+                <h1 id="motto"><span>Where to?</span> Start your next trip<br />on Airbnb.</h1>
+            </div>
+        </div>
+        <!--SEARCHBAR-->
+        <div id="searchbar-wrapper">
+            <div class="row">
+                <form method="POST" action="index.html" id="searchbar">
+                    <input type="text" name="destination" placeholder="Destination, city, address"/>
+                    <input type="submit" name="search" value="Search"/>
+                </form>
+            </div>
+        </div>
+        <!--BNB Table-->
+        <table id="myTable2">
+            <tr>
+                <th onclick="sortTable(0)">Name</th>
+                <th onclick="sortTable(1)">Description</th>
+                <th onclick="sortTable(2)">Location</th>
+                <th>Image </th>
+                <th onclick="sortTable(3)">Availability Range</th>
+                <th>Contact Info </th>
+            </tr>
+            <tr>
+                <td>Omar Helmy</td>
+                <td>200 meters Apartment with 2 bathrooms and 2 bedrooms</td>
+                <td>18 El Merghany St - Heliopolis - Cairo - Egypt</td>
+                <td><img src="apartment1.jpg" alt="" border=3 height=300 width=450></img></td></td>
+                <td>3 Months from now</td>
+                <td>01023943089</td>
+            </tr>
+            <tr>
+                <td>Shereen Afify</td>
+                <td>300 meters Apartment with 2 bathrooms and 5 bedrooms</td>
+                <td>36 Abo El Feda St - Zamalek - Giza - Egypt</td>
+                <td><img src="apartment2.jpg" alt="" border=3 height=300 width=450></img></td></td>
+                <td>2 Months from now</td>
+                <td>01063486361</td>
+            </tr>
+            <tr>
+                <td>Mark Jacoub</td>
+                <td>250 meters Villa with 4 bathrooms and 4 bedrooms</td>
+                <td>Villa 18 - Group 2 - El Patio Compound - Fifth Settlement - Cairo - Egypt</td>
+                <td><img src="villa1.jpg" alt="" border=3 height=300 width=450></img></td></td>
+                <td>5 Months from now</td>
+                <td>01223456789</td>
+            </tr>
+            <tr>
+                <td>George Tadros</td>
+                <td>110 meters Chalet with 1 bathroom and 2 bedrooms</td>
+                <td>Chalet 5A - Diamond - Stella Di Marie - Ain El Sokhna - Suez - Egypt</td>
+                <td><img src="chalet1.jpg" alt="" border=3 height=300 width=450></img></td></td>
+                <td>6 Months from now</td>
+                <td>01002758741</td>
+            </tr>
+            <tr>
+                <td>Sally Ahmed</td>
+                <td>60 meters Studio with 1 bathroom and 1 bedroom</td>
+                <td>Studio 112A - Block 7 - Kattameya Heights - Cairo - Egypt</td>
+                <td><img src="studio1.jpg" alt="" border=3 height=300 width=450></img></td></td>
+                <td>1 Month from now</td>
+                <td>01063219189</td>
+            </tr>
+            <tr>
+                <td>Jana Amr</td>
+                <td>80 meters Villa with 1 bathroom and 1 bedroom</td>
+                <td>Studio 74C - Plaza 1 - 90th Avenue Compound - Fifth Settlement - Cairo - Egypt</td>
+                <td><img src="studio2.jpg" alt="" border=3 height=300 width=450></img></td></td>
+                <td>8 Months from now</td>
+                <td>01526230852</td>
+            </tr>
+        </table>
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable2");
+              switching = true;
+              // Set the sorting direction to ascending:
+              dir = "asc"; 
+              /* Make a loop that will continue until
+              no switching has been done: */
+              while (switching) {
+                // Start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /* Loop through all table rows (except the
+                first, which contains table headers): */
+                for (i = 1; i < (rows.length - 1); i++) {
+                  // Start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /* Get the two elements you want to compare,
+                  one from current row and one from the next: */
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /* Check if the two rows should switch place,
+                  based on the direction, asc or desc: */
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      // If so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      // If so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /* If a switch has been marked, make the switch
+                  and mark that a switch has been done: */
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  // Each time a switch is done, increase this count by 1:
+                  switchcount ++; 
+                } else {
+                  /* If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again. */
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+            </script>
+        <!--JAVASCRIPT IMPORTS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+        </script>
+        <script src="function.js">
+        </script>
+    </body>
+</html>

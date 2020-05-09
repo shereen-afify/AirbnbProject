@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Become a Host</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap"/>
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+    </head>
+    <body>
+        <!-- TOP-NAV-HTML -->
+        <div class="top-nav clearfix">
+            <a href="index.html" class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="Airbnb-logo" />
+        </a>
+        <div id="nav-search-wrapper">
+            <form method="POST" action="index.html">
+                <input type="text" name="search" id="nav-search" placeholder="Search"/>
+            </form>
+        </div>
+        <ul>
+            <li><a href="becomehost.html">Become a Host</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+        </div>
+        <!--MOTTO-->
+        <div id="motto-wrapper">
+            <div style="position:relative; left: 180px; top: 60px;">
+                <h1 id="motto"><span>Where to?</span> Start your next trip<br />on Airbnb.</h1>
+            </div>
+        </div>
+        <!--SEARCHBAR-->
+        <div id="searchbar-wrapper">
+            <div class="row">
+                <form method="POST" action="index.html" id="searchbar">
+                    <input type="text" name="destination" placeholder="Destination, city, address"/>
+                    <input type="submit" name="search" value="Search"/>
+                </form>
+            </div>
+        </div>
+        <form action="new.html" method="POST">
+            Name: <input type="text" name="name" required/><br>
+            Description: <input type="text" name="description" required/><br>
+            Location: <input type="text" name="location" required/><br>
+            <label for="img">Select image:</label>
+            <input type="file" id="img" name="img" accept="image/*"><br>
+            Availability Range From Now: <input type="number" name="range" required/><br> 
+            Contact Info: <input type="number" name="contact" required/><br>
+            <input type="submit" value="Become a Host">
+        </form>
+        <!--JAVASCRIPT IMPORTS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+        </script>
+        <script src="function.js">
+        </script>
+    </body>
+</html>
